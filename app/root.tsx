@@ -13,7 +13,7 @@ import { theme } from "./theme";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Akakce Case App",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -22,7 +22,7 @@ createEmotionCache({ key: "mantine" });
 export default function App() {
   return (
     <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
-      <html lang="en">
+      <html lang="tr">
         <head>
           <StylesPlaceholder />
           <Meta />
