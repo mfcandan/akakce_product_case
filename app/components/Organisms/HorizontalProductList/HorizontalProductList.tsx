@@ -1,52 +1,19 @@
 import { Carousel } from "@mantine/carousel";
 import { Box } from "@mantine/core";
 import HorizontalProduct from "../../Molecules/HorizontalProduct/HorizontalProduct";
+import { useMediaQuery } from "@mantine/hooks";
 
-const horizontalProducts = [
-  {
-    code: 123,
-    imageUrl: "https://cdn.akakce.com/x/apple/iphone-13.jpg",
-    name: "iPhone 13 128 GB",
-    dropRatio: 8.3,
-    price: 20137,
-    countOfPrices: 121,
-    followCount: 3123,
-  },
-  {
-    code: 124,
-    imageUrl:
-      "https://cdn.akakce.com/x/apple/iphone-11-64-gb-aksesuarsiz-kutu.jpg",
-    name: "iPhone 11 64 GB Aksesuarsız Kutu",
-    dropRatio: 3.1,
-    price: 13284.99,
-    countOfPrices: 240,
-    followCount: 4394,
-  },
-  {
-    code: 125,
-    imageUrl: "https://cdn.akakce.com/x/apple/iphone-13-pro-max.jpg",
-    name: "iPhone 13 Pro Max 128 GB",
-    dropRatio: 3.3,
-    price: 30999,
-    countOfPrices: 133,
-    followCount: 521,
-  },
-  {
-    code: 126,
-    imageUrl: "https://cdn.akakce.com/x/samsung/samsung-galaxy-m52.jpg",
-    name: "Samsung Galaxy M52 128 GB",
-    dropRatio: 8.8,
-    price: 6399,
-    countOfPrices: 70,
-    followCount: 1210,
-  },
-];
+interface HorizontalProductListProps {
+  products: any[];
+}
 
-const HorizontalProductList = () => {
+const HorizontalProductList = ({ products }: HorizontalProductListProps) => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
     <Box mt="lg">
       <Carousel
-        maw="25vw"
+        maw={isMobile ? "100vw":"25vw"}
         mx="auto"
         withIndicators
         height={210}
@@ -63,7 +30,7 @@ const HorizontalProductList = () => {
           },
         }}
       >
-        {horizontalProducts.map((product) => (
+        {products.map((product) => (
           <Carousel.Slide key={product.code}>
             <HorizontalProduct product={product} />
           </Carousel.Slide>
