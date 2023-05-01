@@ -1,19 +1,21 @@
 import { Carousel } from "@mantine/carousel";
-import { Box } from "@mantine/core";
+import { Box, LoadingOverlay } from "@mantine/core";
 import HorizontalProduct from "../../Molecules/HorizontalProduct/HorizontalProduct";
-import { useMediaQuery } from "@mantine/hooks";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import { useEffect, useState } from "react";
 
 interface HorizontalProductListProps {
   products: any[];
 }
 
 const HorizontalProductList = ({ products }: HorizontalProductListProps) => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  
   return (
     <Box mt="lg">
+      
       <Carousel
-        maw={isMobile ? "100vw":"25vw"}
+        maw={isMobile ? "100vw" : "25vw"}
         mx="auto"
         withIndicators
         height={210}
