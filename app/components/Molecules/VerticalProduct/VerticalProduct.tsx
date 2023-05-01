@@ -1,6 +1,5 @@
-import { Box, Card, Flex, Image, Paper, Text, Title } from "@mantine/core";
+import { Card, Flex, Image, Text, Title } from "@mantine/core";
 import { Link } from "@remix-run/react";
-import { json } from "@remix-run/node";
 import DropRatioBadge from "../../Atoms/DropRatioBadge";
 
 interface Product {
@@ -14,15 +13,6 @@ interface Product {
 }
 
 const VerticalProductCard = ({ product }: { product: Product }) => {
-  function redirectToProduct(id: string) {
-    return json(null, {
-      status: 302,
-      headers: {
-        Location: `/products/${id}`,
-      },
-    });
-  }
-
   const formattedPrice = new Intl.NumberFormat("tr-TR", {
     style: "currency",
     currency: "TRY",
@@ -43,10 +33,7 @@ const VerticalProductCard = ({ product }: { product: Product }) => {
       to={`/product-details/${product.code}`}
       style={{ textDecoration: "none" }}
     >
-      <Card
-        shadow="sm"
-        onClick={() => redirectToProduct(product.code.toString())}
-      >
+      <Card shadow="sm" onClick={() => {}}>
         <Flex direction="column" mih="300px" justify="space-between">
           {product.dropRatio && (
             <DropRatioBadge dropRatio={product.dropRatio} />
