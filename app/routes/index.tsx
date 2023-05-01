@@ -1,11 +1,12 @@
-import { Flex, Title } from "@mantine/core";
+import { Flex } from "@mantine/core";
+import HomeLink from "~/components/Atoms/HomeLink";
 import HorizontalProductList from "~/components/Organisms/HorizontalProductList/HorizontalProductList";
 import VerticalProductList from "~/components/Organisms/VerticalProductList/VerticalProductList";
 
 export default function Index() {
   return (
     <Flex direction="column" align="center" mt="lg">
-      <Title>Akakçe Case App</Title>
+      <HomeLink />
       <HorizontalProductList />
       <VerticalProductList />
     </Flex>

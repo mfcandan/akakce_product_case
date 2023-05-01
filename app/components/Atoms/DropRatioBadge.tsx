@@ -2,7 +2,7 @@ import { Flex, Text } from "@mantine/core";
 
 interface DropRatioBadgeProps {
   dropRatio: number;
-  place: "left" | "right";
+  place?: "left" | "right";
 }
 
 const DropRatioBadge = ({ dropRatio, place = "left" }: DropRatioBadgeProps) => {
