@@ -4,8 +4,9 @@ import VerticalProductList from "~/components/Organisms/VerticalProductList/Vert
 
 export default function Index() {
   return (
-    <Flex direction="column" align="center" mt={50}>
+    <Flex direction="column" align="center" mt="lg">
       <Title>Akakçe Case App</Title>
+      <HorizontalProductList />
       <VerticalProductList />
     </Flex>
   );
